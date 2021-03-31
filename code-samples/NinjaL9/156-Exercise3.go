@@ -23,7 +23,6 @@ func main() {
 		}()
 	}
 
-	fmt.Println("Before Wait...")
 	wg.Wait()
 	fmt.Println("Done, Counter:", counter)
 }
