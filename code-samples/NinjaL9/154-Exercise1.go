@@ -12,7 +12,7 @@ func main() {
 	wg.Add(2)
 
 	go func() {
-		fmt.Println("Hello from anonomous function")
+		fmt.Println("Hello from anonymous function")
 		wg.Done()
 	}()
 
