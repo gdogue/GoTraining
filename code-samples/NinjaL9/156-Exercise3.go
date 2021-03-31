@@ -13,11 +13,14 @@ func main() {
 	counter := 0
 	wg.Add(100)
 	for i := 0; i < 100; i++ {
-		v := counter
-		runtime.Gosched()
-		v++
-		counter = v
-		wg.Done()
+		go func() {
+			v := counter
+			runtime.Gosched()
+			v++
+			counter = v
+			fmt.Println(counter)
+			wg.Done()
+		}()
 	}
 
 	fmt.Println("Before Wait...")
