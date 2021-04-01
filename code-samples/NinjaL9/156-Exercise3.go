@@ -18,7 +18,7 @@ func main() {
 			runtime.Gosched()
 			v++
 			counter = v
-			fmt.Println(counter)
+			fmt.Println(counter, "GoRoutines:", runtime.NumGoroutine())
 			wg.Done()
 		}()
 	}
